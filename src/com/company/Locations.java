@@ -12,21 +12,26 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
-        FileWriter locFile = null;
-        try {
-            locFile = new FileWriter("locations.txt"); // FileWriter created before because if we do that in the try block we will not able to see that in finally block
-            for (Location location : locations.values()) {
+        try (FileWriter locFile = new FileWriter("locations.txt")) {
+            for (Location location: locations.values()){
                 locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-//                throw new IOException("test exception throw while writing");
-            }
-
-        } finally {
-            System.out.println("In finally block");
-            if (locFile != null) {
-                System.out.println("Attempting to close locfile");
-                locFile.close();
             }
         }
+//        FileWriter locFile = null;
+//        try {
+//            locFile = new FileWriter("locations.txt"); // FileWriter created before because if we do that in the try block we will not able to see that in finally block
+//            for (Location location : locations.values()) {
+//                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
+////                throw new IOException("test exception throw while writing");
+//            }
+//
+//        } finally {
+//            System.out.println("In finally block");
+//            if (locFile != null) {
+//                System.out.println("Attempting to close locfile");
+//                locFile.close();
+//            }
+//        }
     }
 
     static {
