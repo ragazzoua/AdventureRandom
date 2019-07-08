@@ -72,7 +72,7 @@ public class Locations implements Map<Integer, Location> {
                 int destination = Integer.parseInt(dest);
                 System.out.println(loc + ": " + direction + " :" + destination);
                 Location location = locations.get(loc);
-                loc.addExit(direction, destination);
+                location.addExit(direction, destination);
             }
         } catch (IOException e) {
             e.printStackTrace();
