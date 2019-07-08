@@ -7,16 +7,8 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new LinkedHashMap<>();
 
     public static void main(String[] args) throws IOException {
-        try (BufferedWriter locFile = new BufferedWriter(new FileWriter("locations.txt"));
-             BufferedWriter dirFile = new BufferedWriter(new FileWriter("directions.txt"))) {
-            for (Location location : locations.values()) {
-                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-                for (String direction : location.getExits().keySet()) {
-                    if (!direction.equalsIgnoreCase("Q")) {
-                        dirFile.write(location.getLocationID() + "," + direction + "," + location.getExits().get(direction) + "\n");
-                    }
-                }
-            }
+        try {
+            DataOutputStream locfile = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("locations.dat")));
         }
     }
 
