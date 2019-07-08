@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Locations implements Map<Integer, Location> {
-    private static Map<Integer, Location> locations = new HashMap<Integer, Location>();
+    private static Map<Integer, Location> locations = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
         try (FileWriter locFile = new FileWriter("locations.txt");
