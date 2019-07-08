@@ -24,7 +24,7 @@ public class Locations implements Map<Integer, Location> {
     static {
 
 
-        try (Scanner scanner = new Scanner(new FileReader("locations_big.txt"))) {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("locations_big.txt")))) {
 
             scanner.useDelimiter(",");
             while (scanner.hasNextLine()) {
