@@ -19,19 +19,6 @@ public class Locations implements Map<Integer, Location> {
                 }
             }
         }
-//        FileWriter locFile = null;
-//        try {
-//            locFile = new FileWriter("locations.txt");
-//            for(Location location : locations.values()) {
-//                locFile.write(location.getLocationID() + "," + location.getDescription() + "\n");
-//            }
-//        } finally {
-//            System.out.println("in finally block");
-//            if (locFile != null) {
-//                System.out.println("Attempting to close locfile");
-//                locFile.close();
-//            }
-//        }
     }
 
     static {
@@ -57,12 +44,6 @@ public class Locations implements Map<Integer, Location> {
         try (BufferedReader dirFile = new BufferedReader(new FileReader("directions_big.txt"))) {
             String input;
             while ((input = dirFile.readLine()) != null) {
-//                int loc = scanner.nextInt();
-//                scanner.skip(scanner.delimiter());
-//                String direction = scanner.next();
-//                scanner.skip(scanner.delimiter());
-//                String dest = scanner.nextLine();
-//                int destination = Integer.parseInt(dest);
 
                 String[] data = input.split(",");
                 int loc = Integer.parseInt(data[0]);
