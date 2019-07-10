@@ -21,7 +21,7 @@ public class Main {
         vocabulary.put("EAST", "E");
 
 
-        Location currentLocations = locations.getLocation(64);
+        Location currentLocations = locations.getLocation(1);
 
         while (true) {
             System.out.println(currentLocations.getDescription());
